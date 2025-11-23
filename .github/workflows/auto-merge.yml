@@ -1,24 +1,41 @@
-name: Auto Merge All Branches
+name: Auto Merge After Successful CI
 
 on:
   pull_request:
     branches: [ "main" ]
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   automerge:
     runs-on: ubuntu-latest
 
-    steps:
-    - name: Auto merge PR
-      uses: actions/github-script@v6
-      with:
-        script: |
-          const pr = context.payload.pull_request;
+    # CHỈ chạy auto-merge khi toàn bộ CI workflows PASS
+    if: ${{ github.event.pull_request.mergeable_state == 'clean' }}
 
-          // Auto merge TẤT CẢ PR vào main
-          github.rest.pulls.merge({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            pull_number: pr.number
-          });
+    steps:
+      - name: Auto merge PR if CI passed
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+
+            // Chỉ merge nếu tất cả status checks PASS
+            const checks = await github.rest.checks.listForRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: pr.head.sha
+            });
+
+            const allPassed = checks.data.check_runs.every(run => run.conclusion === 'success');
+
+            if (allPassed) {
+              github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              });
+            }
