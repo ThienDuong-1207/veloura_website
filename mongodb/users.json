@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "673b1234567890abcdef0001"
+  },
+  "name": "John Anderson",
+  "email": "john.anderson@example.com",
+  "password": "$2b$12$L.oGZ5WDEDaMPZhg2yUL1eNuuN3s1e34NTDZkrLBGJMGAz.SUkLGO",
+  "cartData": {
+    "673b1234567890abcdef1001": {
+      "M": 2,
+      "L": 1
+    }
+  },
+  "role": "customer",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2024-10-01T10:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-23T15:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "673b1234567890abcdef0002"
+  },
+  "name": "Michael Chen",
+  "email": "michael.chen@example.com",
+  "password": "$2b$12$L.oGZ5WDEDaMPZhg2yUL1eNuuN3s1e34NTDZkrLBGJMGAz.SUkLGO",
+  "cartData": {},
+  "role": "customer",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2024-10-05T08:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-20T12:15:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "673b1234567890abcdef0003"
+  },
+  "name": "Admin Veloura",
+  "email": "admin@veloura.com",
+  "password": "$2b$12$L.oGZ5WDEDaMPZhg2yUL1eNuuN3s1e34NTDZkrLBGJMGAz.SUkLGO",
+  "cartData": {},
+  "role": "admin",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2024-09-01T00:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-23T10:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "673b1234567890abcdef0004"
+  },
+  "name": "Staff Manager",
+  "email": "staff@veloura.com",
+  "password": "$2b$12$L.oGZ5WDEDaMPZhg2yUL1eNuuN3s1e34NTDZkrLBGJMGAz.SUkLGO",
+  "cartData": {},
+  "role": "staff",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2024-09-15T00:00:00.000Z"
+  },
+  "updatedAt": {
+    "$date": "2024-10-22T14:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68fb2775044881764a31c001"
+  },
+  "name": "phu",
+  "email": "phu@veloura.com",
+  "password": "$2b$12$yz2/LzsjDdtHUYFDAZX.FeW2veTT8Hb5qAjpZzkGZhaI8LK5JA8CG",
+  "cartData": {},
+  "role": "customer",
+  "isActive": true,
+  "createdAt": {
+    "$date": "2025-10-24T07:15:01.672Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-24T07:15:01.672Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68ff0a12593d7990f0ba2c32"
+  },
+  "name": "test 3",
+  "email": "koi0905phu@gmail.com",
+  "password": "$2b$12$BsUj6gDoqV5Llg2zXW4RWOK1boEXax.MN.1E1R8mrgoMgPwV.fFvG",
+  "cartData": {},
+  "role": "customer",
+  "emailVerified": true,
+  "isActive": true,
+  "createdAt": {
+    "$date": "2025-10-27T05:58:42.731Z"
+  },
+  "updatedAt": {
+    "$date": "2025-10-27T05:59:22.549Z"
+  }
+}]
